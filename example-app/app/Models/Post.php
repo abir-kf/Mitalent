@@ -15,18 +15,27 @@ class Post extends Authenticatable
 
     protected $fillable = [
        // "email",
-        "tags",
+        //"tags",
+        "tag1",
+        "tag2",
+        "tag3",
         "video",
         //"categorie",
        // "titre",
        "note",
        "nb_note",
        "nb_views",
-       "categorie_id",
+       "user_categorie",
+       "validated_by_admin",
         "user_id"
     ];
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function tags()
+    {
+        return $this->has_many(Tag::class);
     }
 }

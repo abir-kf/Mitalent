@@ -21,10 +21,11 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'username',
+        'role',
         'email',
         'password',
         'image',
-        'categorie',
+        'user_categorie',
         'sirene',
     ];
 
@@ -51,5 +52,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function posts()
     {
         return $this->has_many(Post::class);
+    }
+
+    public function tags_user()
+    {
+        return $this->has_many(Tag::class);
     }
 }

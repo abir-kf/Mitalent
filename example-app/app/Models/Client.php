@@ -22,6 +22,7 @@ class Client extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'sirene',
+        'role',
         'email',
         'password',
        

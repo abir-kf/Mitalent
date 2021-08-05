@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\VideoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JsonApiAuth\RegisterController;
 
 
@@ -23,24 +25,34 @@ use App\Http\Controllers\JsonApiAuth\RegisterController;
 |
 */
 
-Route::get('/posts', [PostController::class, 'index']);
+//Register
 Route::post('/__client', [RegisterController::class, '__client']);
+Route::post('/__admin', [RegisterController::class, '__admin']);
+
+//Post
+Route::get('/posts', [PostController::class, 'index']);
 Route::post('/posts', [PostController::class, 'upload']);
 Route::post('/profil', [PostController::class, 'upload_image']);
 Route::get('/plus_vues', [PostController::class, 'Get_plus_vues']);
 Route::get('/mieux_notes', [PostController::class, 'Get_mieux_notes']);
 Route::get('/plus_recents', [PostController::class, 'Get_plus_recents']);
+Route::get('/Get_my_infos', [PostController::class, 'Get_my_infos']);
+Route::post('/delete_my_Video', [PostController::class, 'delete_my_Video']);
 Route::post('/get_offre', [PostController::class, 'Get_offre']);
-
-
-
 Route::post('/increment-view', [PostController::class, 'incrementView']);
 Route::post('/note', [PostController::class, 'notation']);
 Route::post('/GetVideos_all', [PostController::class, 'GetVideos_all']);
 Route::get('/Get_my_Videos', [PostController::class, 'Get_my_Videos']);
 
+//Categorie
+Route::get('/categories', [CategorieController::class, 'index']);
+Route::post('/add_categorie', [CategorieController::class, 'add_categorie']);
 
 
+//Admin
+Route::get('/getUsers', [AdminController::class, 'getUsers']);
+Route::post('/rejectPost', [AdminController::class, 'rejectPost']);
+Route::post('/approvePost', [AdminController::class, 'approvePost']);
 
 //Route::get('video', 'App\Http\Controllers\Api\VideoController@index');
 

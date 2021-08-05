@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use DB;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +14,46 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        
+        DB::table('categories')->insert([
+            'categorie' => 'Comédien'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Chanteur'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Danceur'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Dj'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Hote/Hottesse'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Influenceur'
+
+        ]);
+
+         
+        DB::table('categories')->insert([
+            'categorie' => 'Mannequin'
+
+        ]);
     }
 }
