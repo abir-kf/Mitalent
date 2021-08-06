@@ -35,8 +35,11 @@ class AdminController extends Controller
        
         if( Auth::user()->role === "admin")
         {
-            $post = Post::where('_id', '=', $request->_id)->delete();
-            $post->post_statut = $request->statut;
+            //$post = Post::where('_id', '=', $request->_id)->delete();
+            $post = Post::find($request->_id);
+            $post->statut = $request->statut;
+           //add
+            $post->save();
             $response = array(
             'status' => 'success',
             'msg' => $request->message,
@@ -54,7 +57,7 @@ class AdminController extends Controller
         {
         $post = Post::find($request->_id);
         $post->validated_by_admin = true;
-        $post->post_statut = $request->statut;
+        $post->statut = $request->statut;
         $post->save();
         $response = array(
             'status' => 'success',

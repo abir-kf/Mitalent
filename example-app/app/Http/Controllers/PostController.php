@@ -92,7 +92,7 @@ class PostController extends Controller
                         "tag3"  => $req->tag3,
                         "video" => $result,
                         "validated_by_admin" => false,
-                        "statut" => "attente",
+                        "statut" => "Attente",
                         //note - vu
                         "nb_views" => $null,
                         "nb_note" => $null,
@@ -282,7 +282,7 @@ class PostController extends Controller
         }
 
         else {
-            return ["erreur"];
+            return ["erreur  over 5"];
         }
 
         $updated = Post::where('user_id', '=', $request->user_id )

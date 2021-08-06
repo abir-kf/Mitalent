@@ -27,6 +27,7 @@ class Post extends Authenticatable
        "nb_views",
        "user_categorie",
        "validated_by_admin",
+       "statut",
         "user_id"
     ];
     public function user()
