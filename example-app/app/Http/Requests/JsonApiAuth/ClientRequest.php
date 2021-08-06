@@ -24,7 +24,7 @@ class ClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'sirene' => 'required|string|max:255',
+            'siret' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:clients',
             'password' => 'required|string|confirmed|min:8',
         ];

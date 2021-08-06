@@ -55,5 +55,18 @@ class DatabaseSeeder extends Seeder
             'categorie' => 'Mannequin'
 
         ]);
+
+        DB::table('statut')->insert([
+            'statut' => 'Attente'
+
+        ]);
+        DB::table('statut')->insert([
+            'statut' => 'Validé'
+
+        ]);
+        DB::table('statut')->insert([
+            'statut' => 'Refusé'
+
+        ]);
     }
 }

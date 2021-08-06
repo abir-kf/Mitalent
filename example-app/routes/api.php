@@ -33,6 +33,7 @@ Route::post('/__admin', [RegisterController::class, '__admin']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::post('/posts', [PostController::class, 'upload']);
 Route::post('/profil', [PostController::class, 'upload_image']);
+Route::post('/tri', [PostController::class, 'tri']);
 Route::get('/plus_vues', [PostController::class, 'Get_plus_vues']);
 Route::get('/mieux_notes', [PostController::class, 'Get_mieux_notes']);
 Route::get('/plus_recents', [PostController::class, 'Get_plus_recents']);

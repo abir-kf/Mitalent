@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->string('sirene');
+            $table->string('siret');
             $table->unsignedInteger('offre');
             $table->foreign('user_categorie')->references('categorie')->on('categories')->onDelete('cascade');
 

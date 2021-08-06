@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('tag3');
             $table->boolean('validated_by_admin')->default(false);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_statut')->references('statut')->on('statuts')->onDelete('cascade');
             $table->foreign('user_categorie')->references('categorie')->on('categories')->onDelete('cascade');
           /*  $table->foreign('user_tag1')->references('tag1')->on('tags')->onDelete('cascade');
             $table->foreign('user_tag2')->references('tag2')->on('tags')->onDelete('cascade');
